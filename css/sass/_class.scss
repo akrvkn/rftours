@@ -1,0 +1,84 @@
+/*---------- General Classes -------------*/
+.margin_top{
+  margin-top: $margin-two;
+}
+.margin_top_3{
+  margin-top: $margin-one;
+}
+.margin_bottom{
+  margin-bottom: $margin-two;
+}
+.margin_right{
+  margin-right: 1rem;
+}
+.margin_bottom_4{
+  margin-bottom: 4rem;
+}
+.padding_top{
+  padding-top: $padding-two;
+}
+.padding_bottom{
+  padding-bottom: $padding-two;
+}
+.hidden{
+  display: none;
+}
+.disabled{
+  color: #ccc;
+}
+.v-m{
+  vertical-align: middle;
+}
+.position-relative{
+  position: relative;
+}
+/*---------- text Classes -------------*/
+.text_blue{
+  color: $blue;
+}
+.text_gray{
+  color: rgba(0,0,0,.5);
+}
+/*---------- button classes -------------*/
+.btn_blue{
+  background: $blue;
+  color: $bc;
+  padding: .5rem 1.5rem;
+  display: inline-block;
+  border-radius: 20px;
+  border: 2px solid $blue;
+  @include trans(.3s);
+  &:hover{
+    background: transparent;
+    color: $blue;
+    @include tform(0,-5px);
+  }
+}
+.btn_blue_border{
+  background: translate;
+  color: $blue;
+  padding: .5rem 1.5rem;
+  display: inline-block;
+  border-radius: 20px;
+  border: 2px solid $blue;
+  @include trans(.3s);
+  &:hover{
+    background: $blue;
+    color: $bc;
+    @include tform(0,-5px);
+  }
+}
+.btn_light{
+  background:$bc;
+  color: $blue;
+  padding: .5rem 1.5rem;
+  display: inline-block;
+  border-radius: 20px;
+  border: 2px solid $bc;
+  @include trans(.3s);
+  &:hover{
+    background: transparent;
+    color: $bc;
+    @include tform(0,-5px);
+  }
+}

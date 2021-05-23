@@ -1,0 +1,201 @@
+// Large devices (desktops, less than 1600px)
+@media (max-width: 1600px) {
+}
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199px) {
+ }
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991px) {
+  .main_header{
+    #main-menu{
+      padding: 2rem 0;
+      overflow-y: auto;
+      .navbar-nav{
+        border-radius: 8px;
+        background: #fff;
+        padding: 2rem;
+        .nav-link{
+          color: $darkblue;
+          text-align: center;
+        }
+      }
+    }
+  }
+  #hero_section{
+    text-align: center;
+    .d-flex{
+      justify-content: center;
+    }
+    .top_mob{
+      display: none;
+    }
+    &.first_style{
+      &:before{
+        display: none;
+      }
+    }
+    &.second_style{
+      &:before{
+      height: 94%;
+      top: 0%;
+      z-index: 0;
+      @include rotate(0deg);
+      right: 0;
+      background: linear-gradient(to right,rgba(255, 255, 255, 0.05),transparent);
+      width: 100%;
+      }
+      &:after{
+        height: 100%;
+        top: 0;
+        z-index: -1;
+        @include rotate(0deg);
+        right: 0;
+        width: 100%;
+      }
+    }
+    &.third_style{
+      &:before{
+        display: none;
+      }
+    }
+    &.style_five{
+      .top_mob{
+        margin-top: 2rem;
+        display: block;
+      }
+    }
+  }
+  #effective_features{
+    .text-right{
+      text-align: left !important;
+    }
+    img{
+      display: none;
+    }
+    .feature{
+      padding-left: 1rem;
+      &:before{
+        display: none;
+      }
+      &:after{
+        left: 0 !important;
+      }
+    }
+  }
+  .aside-sec{
+    margin-top: 4rem;
+  }
+ }
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767px) {
+  #features_section{
+    .feature_item{
+      margin-bottom: 4rem;
+    }
+    &.style2{
+      .col-lg-3.margin_top_3{
+        margin-top: 0px;
+      }
+    }
+  }
+  #description_section{
+    .desc_mob{
+      margin-top: 2rem;
+    }
+  }
+  #clients_section{
+    .owl-carousel{
+      .owl-nav{
+        right: 0;
+        position: relative;
+        .owl-prev,.owl-next{
+          background: $blue;
+          &:before{
+            color: $bc;
+          }
+        }
+      }
+    }
+  }
+  #pricing_section{
+    .pricing_table{
+      margin-bottom: 2rem;
+    }
+  }
+  #download_section{
+    &:before {
+      right: -19%;
+      transform: skew(10deg);
+    }
+  }
+  .blog{
+    margin-bottom: 2rem;
+  }
+  #contact_section{
+    #contact_form{
+      margin-bottom: 2rem;
+    }
+  }
+ }
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) {
+  html{
+    font-size: 12px;
+  }
+  h1{
+    font-size: 2.2rem;
+  }
+  .main_header{
+    .navbar-brand{
+      img{
+        max-width: 115px;
+      }
+    }
+  }
+  #hero_section{
+    &.style_four{
+      border-radius: 0 0 35% 0;
+    }
+  }
+  .pagination {
+    margin-top: 0rem;
+  }
+  #faq_section{
+    .accordion{
+      .card{
+        button.btn{
+          padding: 1rem;
+        }
+      }
+    }
+  }
+  #effective_features .feature:after{
+    top: 9px;
+  }
+  #download_section{
+    &:before {
+      right: 0;
+      width: 100%;
+      transform: skew(0deg);
+    }
+  }
+  .site_footer{
+    .logo{
+      max-width: 115px;
+    }
+    .social_media a {
+       width: 30px;
+       height: 30px;
+       line-height: 30px;
+     }
+     p{
+       font-size: 9px;
+     }
+    &:before{
+      @include skew(15deg,0deg);
+    }
+    #subscribe_form{
+      max-width: 80%;
+    }
+  }
+}

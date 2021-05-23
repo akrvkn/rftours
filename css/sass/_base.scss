@@ -1,0 +1,378 @@
+/*
+Template Name: Appyland Landing page Template
+Author: AHTheme
+Author URI: https://themeforest.net/user/ah-theme
+Version: 1.1
+*/
+/*
+TABLE OF CONTENTS:
+
+1.RESET CSS
+2.GENERAL CLASSES and Id
+  2.1 - main_header // start header
+	2.2 - hero_section // hero section
+	2.3 - features_section // features section
+	2.4 - description_section // description section
+	2.5 - effective_features // effective features section
+	2.6 - clients_section // clients section
+	2.7 - pricing_section // pricing section
+	2.8 - faq_section // faq section
+	2.9 - download_section // Download section
+	2.10 - blogs_section // blogs section
+	2.11 - contact_section // contact section
+	2.12 - site_footer // footer section
+
+3. General COLOR CLASSES
+	3.1-text_blue
+	3.2-text_gray
+	3.3-btn_blue
+	3.4-btn_blue_border
+	3.5-btn_light
+*/
+
+/* ====== fonts =========== */
+
+@font-face {
+	font-family: 'Conv_Raleway-Bold';
+	src: url('../fonts/font/Raleway-Bold_0.eot');
+	src: local('☺'), url('../fonts/font/Raleway-Bold_0.woff') format('woff'), url('../fonts/font/Raleway-Bold_0.ttf') format('truetype'), url('../fonts/font/Raleway-Bold_0.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_Raleway-Medium';
+	src: url('../fonts/font/Raleway-Medium.eot');
+	src: local('☺'), url('../fonts/font/Raleway-Medium.woff') format('woff'), url('../fonts/font/Raleway-Medium.ttf') format('truetype'), url('../fonts/font/Raleway-Medium.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Conv_Raleway-Regular';
+	src: url('../fonts/font/Raleway-Regular.eot');
+	src: local('☺'), url('../fonts/font/Raleway-Regular.woff') format('woff'), url('../fonts/font/Raleway-Regular.ttf') format('truetype'), url('../fonts/font/Raleway-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* ====== Color Palette =========== */
+
+$lightblue: #def0fd; // light blue color
+$blue: #5387ed; // blue color
+$green:#0dc5ad; // green color
+$darkblue:#28407b; // dark blue color
+$tc: #333;  //text color
+$bc: #fff;  //basic color
+$facebook: #3b5998;
+$twitter: #55acee;
+$instagram: #e1306c;
+$googleplus: #dc4e41;
+$youtube: #cd201f;
+$linkedin: #0077b5;
+$behance: #1769ff;
+$pintrest: #bd081c;
+
+/* ====== fonts =========== */
+
+$font-family-regular: 'Conv_Raleway-Regular';
+$font-family-medium: 'Conv_Raleway-Medium';
+$font-family-bold: 'Conv_Raleway-Bold';
+
+
+/* ====== Font Sizes =========== */
+$font-extra-small: 14px;
+$base-font-size: 15px;
+$font-small: 1.4rem;
+$font-big: 2rem;
+$font-extra-big: 2.5rem;
+
+/* ====== Text =========== */
+
+$base-line-height: 24px;
+$letter-space: 1px;
+
+/* ====== padding =========== */
+
+$padding-one: 3rem;
+$padding-two: 2rem;
+$padding-three: 1rem;
+
+/* ====== margin =========== */
+
+$margin-one: 3rem;
+$margin-two: 2rem;
+$margin-three: 1rem;
+
+/* ====== border radius =========== */
+
+$br: 8px;
+
+
+/* ====== box shadow =========== */
+
+$box-shadow : 0 0 25px #d0d0d0;
+
+
+ /*----------- functions -----------*/
+
+ @mixin scale($a,$b) { // scale animation
+   -webkit-transform: scale($a,$b);
+   -moz-transform: scale($a,$b);
+   -o-transform: scale($a,$b);
+      transform: scale($a,$b);
+ }
+ @mixin tform($a,$b) { // translate animation
+   -webkit-transform: translate($a,$b);
+   -moz-transform: translate($a,$b);
+   -o-transform: translate($a,$b);
+      transform: translate($a,$b);
+ }
+ @mixin rotate($a) { // rotatex animation
+	 -webkit-transform: rotate($a);
+	 -moz-transform: rotate($a);
+	 -o-transform: rotate($a);
+			transform: rotate($a);
+ }
+ @mixin rotatex($a) { // rotatex animation
+   -webkit-transform: rotateX($a);
+   -moz-transform: rotateX($a);
+   -o-transform: rotateX($a);
+      transform: rotateX($a);
+ }
+ @mixin rotatey($a) { // rotatey animation
+   -webkit-transform: rotateY($a);
+   -moz-transform: rotateY($a);
+   -o-transform: rotateY($a);
+      transform: rotateY($a);
+ }
+ @mixin trans($a) { // transition
+   -webkit-transition: all $a ease-in-out;
+   -moz-transition: all $a ease-in-out;
+   -o-transition: all $a ease-in-out;
+      transition: all $a ease-in-out;
+ }
+ @mixin skew($a,$b) { // skew animate
+   -webkit-transform: skew($a,$b);
+   -moz-transform: skew($a,$b);
+   -o-transform: skew($a,$b);
+      transform: skew($a,$b);
+ }
+ @mixin manimate($a,$b,$c,$d,$e,$f,$g) {
+   -webkit-transform: rotate($a) translate($b,$c)  scale($d,$e) skew($f,$g);
+   -moz-transform:rotate($a) translate($b,$c)  scale($d,$e) skew($f,$g);
+   -o-transform: rotate($a) translate($b,$c)  scale($d,$e) skew($f,$g);
+      transform: rotate($a) translate($b,$c)  scale($d,$e) skew($f,$g);
+ }
+ /*---------- animation ----------*/
+@keyframes border_animation {
+	to { transform: rotate(360deg); }
+}
+@keyframes loader {
+	0%,100%{
+		opacity: .8;
+		@include scale(.8,.8);
+	}
+	50%{
+		opacity: 1;
+		@include scale(1,1);
+	}
+}
+@keyframes top_nimate {
+	0%,100%{
+		@include tform(0,0);
+	}
+	50%{
+		@include tform(0,-15px);
+	}
+}
+/* --------------------------------
+RESET CSS
+-------------------------------- */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+strike,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+ul,
+li {
+  list-style: none;
+}
+select { width: 100%; }
+input:focus,button:focus,textarea:focus { outline: 0; }
+a{
+	color: $tc;
+  &:hover{
+    color: $tc;
+    text-decoration: none;
+  }
+}
+button{
+  padding: .5rem 2rem;
+  cursor: pointer;
+}
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: 15px;
+  font-size: $base-font-size;
+	overflow-x: hidden;
+}
+body {
+  line-height: ($base-line-height/$base-font-size);
+  font-family: $font-family-medium;
+  overflow-x: hidden;
+	color: $tc;
+}
+input{
+  height: 42px;
+	padding: 0 $padding-three;
+	background: #eee;
+	border: 0;
+	border-radius:$br;
+	margin-bottom: 1rem;
+	@include trans(.3s);
+	&::placeholder{
+		color: #929292;
+	}
+	&:focus{
+		@include tform(0,-.5rem);
+	}
+}
+textarea{
+  resize: none;
+  padding: $padding-three;
+  height: 150px;
+	background: #eee;
+	border: 0;
+	border-radius: $br;
+	margin-bottom: 1rem;
+	@include trans(.3s);
+	&::placeholder{
+		color: #929292;
+	}
+	&:focus{
+		@include tform(0,-.5rem);
+	}
+}
+p,h1,h2,h3,form{
+  margin:0 0 $margin-three 0px;
+}
+h1{
+  font-size: 40px;
+  font-size: $font_extra_big;
+}
+h2{
+  font-size: 30px;
+  font-size: $font_big;
+}
+h3{
+  font-size: 21px;
+  font-size: $font_small;
+}
+section{
+	padding: 5rem 0 ;
+}
+img{
+	max-width: 100%;
+}
